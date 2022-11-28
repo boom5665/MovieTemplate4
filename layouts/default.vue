@@ -2,12 +2,10 @@
     <div>
         <b-container>
             <Header />
-            <Banner />
-            <div class="text-center">
+            <!-- <div class="text-center">
                 <h2 class="web-title">{{ SEOTitle }}</h2>
                 <h3 class="web-slogan">{{ slogan }}</h3>
-            </div>
-
+            </div> -->
         </b-container>
 
         <b-container>
@@ -16,6 +14,7 @@
                     <Nuxt />
                 </b-col>
             </b-row>
+            <Banner />
             <Footer />
             <div class="footer-text">
                 <div class="footer-title">{{ slogan }}</div>
@@ -33,7 +32,6 @@
                 <div class="close-ads" @click="showAds = false">X</div>
             </div>
         </div>
-
     </div>
 </template>
 

@@ -2,11 +2,11 @@
     <div>
         <b-container>
             <Header :_isAV="true" />
-            <Banner />
-            <div class="text-center">
+
+            <!-- <div class="text-center">
                 <h2 class="web-title">{{ SEOTitle }}</h2>
                 <h3 class="web-slogan">{{ slogan }}</h3>
-            </div>
+            </div> -->
         </b-container>
         <div class="full-category-line"></div>
         <b-container>
@@ -20,6 +20,7 @@
                     <Nuxt />
                 </b-col>
             </b-row>
+                 <Banner />
             <div class="footer-text">
                 <div class="footer-title">{{ slogan }}</div>
                 <div class="footer-content">{{ descriptionFooter }}</div>

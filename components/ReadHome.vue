@@ -1,6 +1,9 @@
 <template>
     <div class="list-container">
         <h2 class="list-title">{{ _isSearch ? " : " + _search : "" }}</h2>
+        <div class="dis-between">
+            <h2 class="list-title">หนังมาแรง</h2>
+        </div>
         <swiper />
         <div class="" v-if="movieList.length">
             <!-- <b-row>
@@ -13,13 +16,13 @@
             </div>
         </div>
         <div class="dis-between">
-            <h2 class="list-title">หนังใหม่</h2>
+            <h2 class="list-title">10 อันดับน่าดู</h2>
         </div>
         <div class="" v-if="movieList">
             <swipercate />
         </div>
         <div class="dis-between">
-            <h2 class="list-title">Action</h2>
+            <h2 class="list-title">หนังใหม่</h2>
         </div>
         <div class="" v-if="movieList">
             <swipercate />
