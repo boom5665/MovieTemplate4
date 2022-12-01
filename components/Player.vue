@@ -55,9 +55,12 @@
             </b-container>
         </b-aspect>
         <b-aspect aspect="16:9" class="">
-            <div class="iframe-container">
+            <!-- <div class="iframe-container">
                 <iframe id="playervideo" :src="playerIframeUrl" allowfullscreen="allowfullscreen" style="width: 100%; height: 100%; border: 0px; overflow: hidden"></iframe>
                 <AdsVideo :_adsArray="adsVideoList" v-model="isShowAds" v-if="adsVideoList.length > 0 && isShowAds" />
+            </div> -->
+            <div class="iframe-container" style="z-index: 0; cursor: pointer; " @click="Movie()">
+                <nuxt-img format="webp" style="width: 100%;" src="/playtem.png" alt="loader" />
             </div>
         </b-aspect>
         <div class="d-flex align-items-center justify-content-between bg-button">
@@ -253,30 +256,34 @@ export default {
         getEpLink(ep) {
             return "/" + this._type + "/" + this._id + "/" + this._slug + "/" + ep;
         },
+        Movie() {
+            alert("กรุณาซื้อแพ็กเกจ");
+        },
         reportMovie() {
             const detail = this.reportDetail;
             if (detail.trim() == "") {
                 alert("กรุณากรอกข้อมูลให้ครบ");
                 return;
             }
-            const self = this;
-            this.showLoader = true;
-            let type_id = 0;
-            if (this._isAV) type_id = 1;
-            this.$axios
-                .$post("moviebroken", {
-                    movie_id: self._id,
-                    movie_type: type_id,
-                    reason: detail,
-                })
-                .then(function (response) {
-                    self.showReportPopup = false;
-                    self.showLoader = false;
-                    self.reportDetail = "";
-                    if (response.code == 200) {
-                        alert("สำเร็จ");
-                    }
-                });
+            alert("กรุณาซื้อแพ็กเกจ");
+            // const self = this;
+            // this.showLoader = true;
+            // let type_id = 0;
+            // if (this._isAV) type_id = 1;
+            // this.$axios
+            //     .$post("moviebroken", {
+            //         movie_id: self._id,
+            //         movie_type: type_id,
+            //         reason: detail,
+            //     })
+            //     .then(function (response) {
+            //         self.showReportPopup = false;
+            //         self.showLoader = false;
+            //         self.reportDetail = "";
+            //         if (response.code == 200) {
+            //             alert("สำเร็จ");
+            //         }
+            //     });
         },
         getHotMovies() {
             const self = this;

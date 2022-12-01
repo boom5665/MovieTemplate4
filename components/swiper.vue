@@ -35,17 +35,14 @@ export default {
         getMovies() {
             const self = this;
             this.loadingList = true;
-            this.$axios
-                .$post("movie/listmoviesimilar", {
-                })
-                .then(function (response) {
-                    if (response.code == 200) {
-                        // console.log(response.result);
-                        self.movieList = response.result;
-                        self.maxPage = response.page_total;
-                    }
-                    self.loadingList = false;
-                });
+            this.$axios.$get("movie/poster", {}).then(function (response) {
+                if (response.code == 200) {
+                    // console.log(response.result);
+                    self.movieList = response.result;
+                    self.maxPage = response.page_total;
+                }
+                self.loadingList = false;
+            });
         },
     },
 };
@@ -76,5 +73,4 @@ export default {
     left: 0px;
     top: 40%;
 }
-
 </style>
