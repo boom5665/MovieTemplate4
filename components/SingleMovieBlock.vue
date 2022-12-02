@@ -3,14 +3,15 @@
         <div class="poster-container">
             <nuxt-img class="poster" :loading="_fetchMode" :src="_obj.picture" height="287" :alt="_obj.full_name" />
             <div class="title">{{ _obj.full_name }}</div>
+            <div class="resolution" style="left: 15px;">{{ _obj.quality }}</div>
+            <div class="rating" style="right: 10px;" v-show="_obj.ratescore">{{ score ? score : _obj.ratescore }}</div>
             <div class="poster-overlay">
-                <div >
+                <div>
                     <div class="resolution">{{ _obj.quality }}</div>
-                     <div class="rating" v-show="_obj.ratescore">{{ score ? score : _obj.ratescore }}</div>
-
+                    <div class="rating" v-show="_obj.ratescore">{{ score ? score : _obj.ratescore }}</div>
                 </div>
 
-                <div style="margin-top: 25px;">
+                <div style="margin-top: 25px">
                     <div class="">{{ _obj.full_name }}</div>
                     <div class="description">{{ _obj.description }}</div>
                     <div>
@@ -51,18 +52,18 @@ export default {
             default: "lazy",
         },
     },
-       data() {
+    data() {
         return {
             score: "",
         };
     },
     mounted() {
-        this.getfixscore()
+        this.getfixscore();
     },
 
     methods: {
         getfixscore() {
-           this.score =  Number.parseFloat(this._obj.ratescore).toFixed(1);
+            this.score = Number.parseFloat(this._obj.ratescore).toFixed(1);
         },
     },
 };

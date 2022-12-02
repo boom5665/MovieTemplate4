@@ -95,6 +95,7 @@
     border: transparent;
     color: rgba(134, 134, 134, 1);
     cursor: pointer;
+
     &:hover {
       color: red;
     }
@@ -102,6 +103,29 @@
 
 }
 
+.dropdown-menu.show {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  position: absolute;
+
+  @media screen and (max-width: 1024px) {
+    position: absolute !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    left: -240px;
+  }
+
+  @media screen and (max-width: 768px) {
+    position: absolute !important;
+    grid-template-columns: 1fr 1fr 1fr;
+    left: -170px;
+  }
+
+  @media screen and (max-width: 576px) {
+    position: absolute !important;
+    grid-template-columns: 1fr 1fr;
+    left: -100px;
+  }
+}
 
 .dropdown-menu {
   top: 100%;

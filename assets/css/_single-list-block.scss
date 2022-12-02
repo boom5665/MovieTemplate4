@@ -14,6 +14,7 @@
       /* box-shadow: #464646 2px 2px 9px; */
       -o-object-fit: cover;
       object-fit: cover;
+
     }
 
     .rating {
@@ -114,7 +115,8 @@
     bottom: 2%;
     padding: 10px;
     color: white;
-    .buttom{
+
+    .buttom {
       background: linear-gradient(180deg, #0090F9 0%, #003A65 100%);
       padding: 5px 10px;
       font-size: 18px;
@@ -192,7 +194,7 @@
       background: linear-gradient(180deg, #FFC452 51.56%, #F64A00 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text;
+    
     }
 
 
@@ -201,6 +203,13 @@
       .poster-overlay {
         display: flex;
 
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+
+        @media screen and (max-width: 576px) {
+          display: none;
+        }
       }
     }
   }
@@ -231,6 +240,7 @@
     //   background: black;
     //   border-radius: 50px;
     // }
+
   }
 
   .description {
