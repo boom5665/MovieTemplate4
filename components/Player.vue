@@ -59,8 +59,8 @@
                 <iframe id="playervideo" :src="playerIframeUrl" allowfullscreen="allowfullscreen" style="width: 100%; height: 100%; border: 0px; overflow: hidden"></iframe>
                 <AdsVideo :_adsArray="adsVideoList" v-model="isShowAds" v-if="adsVideoList.length > 0 && isShowAds" />
             </div> -->
-            <div class="iframe-container" style="z-index: 0; cursor: pointer; " @click="Movie()">
-                <nuxt-img format="webp" style="width: 100%;" src="/playtem.png" alt="loader" />
+            <div class="iframe-container" style="z-index: 0; cursor: pointer" @click="Movie()">
+                <nuxt-img format="webp" style="width: 100%" src="/playtem.png" alt="loader" />
             </div>
         </b-aspect>
         <div class="d-flex align-items-center justify-content-between bg-button">
@@ -257,15 +257,15 @@ export default {
             return "/" + this._type + "/" + this._id + "/" + this._slug + "/" + ep;
         },
         Movie() {
-            alert("กรุณาซื้อแพ็กเกจ");
+            this.$swal("", "กรุณาซื้อแพ็กเกจ", "warning");
         },
         reportMovie() {
             const detail = this.reportDetail;
             if (detail.trim() == "") {
-                alert("กรุณากรอกข้อมูลให้ครบ");
+                this.$swal("", "กรุณากรอกข้อมูลให้ครบ", "error");
                 return;
             }
-            alert("กรุณาซื้อแพ็กเกจ");
+            this.$swal("", "กรุณาซื้อแพ็กเกจ", "warning");
             // const self = this;
             // this.showLoader = true;
             // let type_id = 0;
@@ -281,7 +281,7 @@ export default {
             //         self.showLoader = false;
             //         self.reportDetail = "";
             //         if (response.code == 200) {
-            //             alert("สำเร็จ");
+            //             self.$swal("", "สำเร็จ", "success");
             //         }
             //     });
         },
