@@ -1,5 +1,5 @@
 <template>
-    <nuxt-link :to="getPlayUrl(_obj)" class="single-movie-block">
+    <div class="single-movie-block">
         <div class="poster-container">
             <nuxt-img class="poster" :loading="_fetchMode" :src="_obj.imageslide" height="1000" :alt="_obj.full_name" />
             <div class="poster-overlay">
@@ -12,8 +12,10 @@
                         {{ value.name_th }}
                     </div>
                 </div>
-                 <div class="title-buttom" style="display: flex">
-                    <div class="buttom">ดูหนัง</div>
+                <div class="title-buttom" style="display: flex">
+                    <nuxt-link :to="getPlayUrl(_obj)">
+                        <div class="buttom">ดูหนัง</div>
+                    </nuxt-link>
                 </div>
             </div>
         </div>
@@ -23,7 +25,7 @@
             <div class="sound flex-grow-1" v-show="_obj.sound_main">เสียง : {{ _obj.sound_main }}</div>
             <div class="view"><b-icon-eye class="view-icon" /> {{ _obj.view }}</div>
         </div> -->
-    </nuxt-link>
+    </div>
 </template>
 
 <script>
